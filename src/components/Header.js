@@ -32,7 +32,7 @@ export const Header = () => {
       }
     });
     return () => unsubscribe();
-  }, []);
+  }, [dispatch, navigate]);
 
   const handleSignOut = () => {
     signOut(auth)
@@ -65,7 +65,7 @@ export const Header = () => {
             </select>
           )}
           <button className="py-2 px-4 m-2 text-white mx-4 my-2 bg-purple-800 rounded-lg" onClick={handleGptSearchClick}>
-            { showGptSearch ? "Home" : "GPT Search" } 
+            {showGptSearch ? "Home" : "GPT Search"}
           </button>
           <img className="w-12 h-12" src={user?.photoURL} alt="User icon" />
           <button className="font-bold text-white" onClick={handleSignOut}>
